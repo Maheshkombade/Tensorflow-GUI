@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class='container'>
+    <a href="{% url 'retrainingdata' %}"><button class='btn btn-primary w-100'>Retrain the Model</button></a> 
+</div>
+
+{% include "image_display_per_class.html" %}
+
+{% endblock content %}

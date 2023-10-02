@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="container" style="text-align: center;">
+
+    {% for image_orig, orig_name, image_new, new_name in images %}
+    <div class='row' style="border: 1px solid black; margin: 5%; border-radius: 5px; padding: 2%;">
+        <div class='col-sm-5'>
+            <img src="{% static image_orig %}" style="width:100%;">
+            <p>{{orig_name}}</p>
+        </div>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-5'>
+            <img src="{% static image_new %}" style="width:100%">
+            <p>{{new_name}}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>

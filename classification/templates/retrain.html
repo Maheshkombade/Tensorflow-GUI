@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div class="container" >
+      <h2>
+            Retrain the Original data by applying some augmentations ---> augmentations ---> original vs Augmented Images ---> option to retrain
+        </h2>
+        <button type="submit">
+            Add augmentations
+
+
+        </button>
+<br>
+<br>
+        <h2>
+            Just retain the original data without any augmentations ---> confirmation for retraining
+        </h2>
+        <button>
+            Retrain
+        </button>
+<br>
+<br>
+        <h2>
+            Add more classes!
+        </h2>
+
+        <button>
+            Classes
+        </button>
+
+    </div>
+
+
+</body>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <h1>Add new image to database</h1>
+        <p>
+            Add one or more new images by selecting the "Img file". select the class to which the image needs to be added. Finally click on "Upload" button.
+        </p>
+        <hr>
+
+        <form method = "post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <b style='color: red;'>(Only files with extensions .jpg .jpeg .png will be uploaded other images will be ignored !)</b>
+            <br>
+            <button type="submit" class="btn btn-primary w-50 m-1">Upload</button>
+            <br>
+
+        </form>
+
+        {% include 'image_display_per_class.html' %}
+         <a href="{% url 'hub2' %}"><button class='btn btn-primary w-100'>Retrain the Model</button></a>
+    </div>
+
+</body>
+{% endblock content %}

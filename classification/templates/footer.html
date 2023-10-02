@@ -1,0 +1,62 @@
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+
+  function getAllAugs() {
+    var augsTags = document.getElementsByClassName('justList')[0].children;
+    var augForm = document.getElementById('aug_form');
+    var inputBox = document.getElementsByName('augs')[0];
+    var augslist = []
+
+    for(var i=0;i<augsTags.length;i++) {
+      augslist.push(augsTags[i].textContent)
+    }
+
+    inputBox.value = augslist.join()
+    console.log(inputBox.value)
+    augForm.submit()
+    
+  }
+
+  $('.my-1').click(function() {
+  var text = this.innerHTML; 
+  var itemFound = false;
+  $('ul.justList div').each(function() {
+    if ($(this).text() === text) { 
+      itemFound = true;
+    }
+  });
+
+  if (!itemFound) {
+    $(this).removeClass('btn-primary')
+    $(this).addClass('btn-success')
+    $('<div>', {
+      html: text
+    },'</div>')
+    .addClass('alert alert-info')
+    .appendTo('ul.justList') 
+  } else {
+    $(this).addClass('btn-primary')
+    $(this).removeClass('btn-success')
+    $(`ul.justList div:contains(${text})`).remove();
+  }
+});
+</script>
+<style>
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10%;
+  height: 5%;
+  background-color: rgb(27, 27, 27);
+  color: rgb(219, 219, 219);
+  text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p style="position: relative;">© Inter IIT 2021</p>
+</div>  

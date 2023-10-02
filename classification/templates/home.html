@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <form method='post'>
+         {% csrf_token %}
+    <div class='container text-center'>
+    <button type="submit"  value="1" name ="c1" class="btn btn-primary w-100 m-1 ">Retrain Model</button>
+    <button type="submit" value="2" name ="c1" class="btn btn-primary w-100 m-1">Add augmentations and then retrain the original model</button>
+    <button type="submit"  value="3" name ="c1" class="btn btn-primary w-100 m-1">Add Images to classes and retrain</button>
+    <button type="submit" value="4" name ="c1" class="btn btn-primary w-100 m-1">Test the original model by giving it some image</button>
+    <a href="/app/graphs"><button type="button" class="btn btn-primary w-100 m-1">See Graphs</button></a>
+    </div>
+</form>
+
+</body>
+{% endblock content %}

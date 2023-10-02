@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="text-center">
+          <h3>Choose Augmentations</h3>
+          <hr>
+          <div class="text-left">
+            <button type="button" class="btn btn-primary my-1 w-100">vertical_flip</button>
+            <button type="button" class="btn btn-primary my-1 w-100">rotation</button>
+            <button type="button" class="btn btn-primary my-1 w-100">Convolution</button>
+            <button type="button" class="btn btn-primary my-1 w-100">fill</button>
+            <button type="button" class="btn btn-primary my-1 w-100">horizontal_shift</button>
+            <button type="button" class="btn btn-primary my-1 w-100">vertical_shift</button>
+            <button type="button" class="btn btn-primary my-1 w-100">brightness</button>
+            <button type="button" class="btn btn-primary my-1 w-100">zoom</button>
+            <button type="button" class="btn btn-primary my-1 w-100">channel_shift</button>
+            <button type="button" class="btn btn-primary my-1 w-100">horizontal_flip</button>
+            <button type="button" class="btn btn-primary my-1 w-100">blur</button>
+            <button type="button" class="btn btn-primary my-1 w-100">gaussian_blur</button>
+            <button type="button" class="btn btn-primary my-1 w-100">median_blur</button>
+            <button type="button" class="btn btn-primary my-1 w-100">dialate</button>
+            <button type="button" class="btn btn-primary my-1 w-100">erode</button>
+            <button type="button" class="btn btn-primary my-1 w-100">morph_grad</button>
+            <button type="button" class="btn btn-primary my-1 w-100">clip</button>
+            <button type="button" class="btn btn-primary my-1 w-100">trans</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="text-center">
+          <h3>Selected Augmentations</h3>
+          <hr>
+          <div class="text-center">
+            <ul class="justList">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class='row'>
+      <div class="col-sm-12 text-center m-2">
+      <form id='aug_form' enctype="multipart/form-data" method='post'>
+        {% csrf_token %}
+        {{ form}}
+        <button type='button' onclick='getAllAugs()' id="aug_submit" class="btn btn-primary w-50 mb-5">SUBMIT</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+{% endblock content %}
